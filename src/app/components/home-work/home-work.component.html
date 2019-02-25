@@ -1,0 +1,20 @@
+<div class="container">
+  <form>
+    <select name="field" [(ngModel)]="field">
+      <option value="name">Name</option>
+      <option value="age">Age</option>
+      <option value="rating">Rating</option>
+    </select>
+    <select name="trend" [(ngModel)]="trend">
+      <option value="up">Up</option>
+      <option value="down">Down</option>
+    </select>
+  </form>
+  <ul class="user" *ngFor="let user of (arrExmpl | sortArr:field:trend)">
+    <li>Name: {{ user.name }}</li>
+    <li>Age: {{ user.age }}</li>
+    <li>Rating: {{ user.rating }}</li>
+  </ul>
+
+  <p>{{ dateExmpl | myDatePipe}}</p>
+</div>
